@@ -1,11 +1,18 @@
-#include <iostream>
 #include "Solution.class.hpp"
 
-int main( int argc, char *argv[] ) {
+void	usage() {
+	std::cout << "usage: ./computor \" equation \"" << std::endl;
+	exit( 1 );
+}
 
-	Solution	obj("5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0");
+int		main( int argc, char *argv[] ) {
+	if ( argc != 2 )
+		usage();
 
-	obj.parse_line();
+
+	Solution	obj( argv[1] );
+
+	obj.solve();
 
 	return ( 0 );
 }

@@ -21,19 +21,25 @@ class Solution {
 private:
 	int 				_degree;
 	std::string			_line;
+	std::string			_result;
 	std::vector<double>	_equation;
 public:
 	Solution();
 	Solution( std::string line );
 	Solution( const Solution &rhs );
 
+	const Solution	&operator=( const Solution &rhs );
+
 	void	parse_line();
+	void	degree_check();
 	double	counter( std::vector<std::string> vec, std::string subs );
 	double	numbers( std::vector<std::string> vec );
 	void	solve_2degree();
-
-	const Solution	&operator=( const Solution &rhs );
-
+	void	solve_1degree();
+	void	solve_0degree();
+	void	reduced();
+	void	result();
+	void	solve();
 
 	~Solution();
 };
